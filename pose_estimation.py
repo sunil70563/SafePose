@@ -20,6 +20,9 @@ if not cap.isOpened():
 else:
     print("SUCCESS: Stream Connected! Starting Inference...")
 
+# 1. Create a Resizable Window
+cv2.namedWindow("SafePose", cv2.WINDOW_NORMAL) 
+
 prev_time = 0
 
 while True:
@@ -41,12 +44,14 @@ while True:
         fps = 1 / (curr_time - prev_time) if prev_time != 0 else 0
         prev_time = curr_time
         
-        # Display FPS (Corrected Syntax)
+        # Display FPS
         cv2.putText(annotated_frame, f"FPS: {int(fps)}", (20, 50), 
                     cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
-        cv2.imshow("SafePose - Phase 2", annotated_frame)
+        # Show Output in Resizable Window
+        cv2.imshow("SafePose", annotated_frame)
 
+    # Press 'q' to quit
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
