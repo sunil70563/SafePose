@@ -1,0 +1,21 @@
+# Python System Files
+__pycache__/
+*.py[cod]
+venv/
+.env
+
+# Media Files (Too big for GitHub)
+*.mp4
+*.avi
+
+# IDE Settings
+.vscode/
+.idea/
+
+# Models (We download these via code, don't push binaries)
+*.pt
+*.onnx
+*.engine
+
+#Project Blueprint
+Theory/
