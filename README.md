@@ -44,3 +44,21 @@ Push a local video file (`input_video.mp4`) to the server to simulate a live CCT
 ffmpeg -re -stream_loop -1 -i input_video.mp4 -c copy -f rtsp -rtsp_transport tcp rtsp://localhost:8554/mystream
 
 ```
+
+## 💻 Running the Inference Engine (Phase 2)
+
+### Installation
+
+```
+pip install -r requirements.txt
+
+```
+
+### Run Baseline Model
+
+This script connects to the local RTSP stream, loads the YOLOv8-Pose model, and visualizes the skeletal tracking in real-time.
+
+```
+python pose_estimation.py
+
+```
